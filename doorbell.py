@@ -5,7 +5,7 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 
-#import CHIP_IO.GPIO as GPIO
+import CHIP_IO.GPIO as GPIO
 import configparser
 import subprocess
 import time
@@ -45,8 +45,7 @@ def main():
     service = build('gmail', 'v1', credentials=creds)
 
     # Call the Gmail API
-    results = service.users().labels().list(userId='me').execute()
-    message = create_message('doorbell@peng168.com', config['default']['toemails'], 'Ding Dong', 'Ding Dong')
+    #results = service.users().labels().list(userId='me').execute()
 
     GPIO.cleanup(pin)
     GPIO.setup(pin, GPIO.IN)
