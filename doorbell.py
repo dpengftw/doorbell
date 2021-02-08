@@ -101,10 +101,10 @@ def send_message(service, user_id, message):
   try:
     message = (service.users().messages().send(userId=user_id, body=message)
                .execute())
-    print 'Message Id: %s' % message['id']
+    print ('Message Id: %s' % message['id'])
     return message
   except errors.HttpError, error:
-    print 'An error occurred: %s' % error
+    print ('An error occurred: %s' % error)
 
 
 if __name__ == '__main__':
