@@ -103,8 +103,8 @@ def send_message(service, user_id, message):
                .execute())
     print ('Message Id: %s' % message['id'])
     return message
-  except errors.HttpError, error:
-    print ('An error occurred: %s' % error)
+  except:
+    print ('An error occurred.')
 
 
 if __name__ == '__main__':
