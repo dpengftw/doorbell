@@ -257,7 +257,7 @@ def main():
     GPIO.cleanup(pin)
 
 
-def doorbell_handler(self):
+def doorbell_handler():
   sns_wrapper = SnsWrapper(boto3.resource('sns'))
  
   topic = sns_wrapper.create_topic("doorbell")
