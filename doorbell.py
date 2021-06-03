@@ -260,7 +260,6 @@ def doorbell_handler():
   sns_wrapper = SnsWrapper(boto3.resource('sns'))
  
   topic = sns_wrapper.create_topic("doorbell")
-  sns_wrapper.subscribe(topic, "sms", "+16502454859")
   sns_wrapper.publish_message(
     topic, "Ding Dong", {"mobile_key": "friendly"})
 
