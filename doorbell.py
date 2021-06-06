@@ -21,7 +21,7 @@ import urllib
 
 logger = logging.getLogger(__name__)
 
-pin = "GPIO1"
+pin = "XIO-P0"
 
 class SnsWrapper:
     """Encapsulates Amazon SNS topic and subscription functions."""
@@ -247,7 +247,7 @@ def main():
   GPIO.setup(pin, GPIO.IN)
 
   # Add Callback for Both Edges using the add_event_detect() method
-  GPIO.add_event_detect(pin, GPIO.FALLING, doorbell_handler())
+  GPIO.add_event_detect(pin, GPIO.FALLING, doorbell_handler)
 
   try:
     while (not time.sleep(5)):
